@@ -1,0 +1,21 @@
+db:
+  host: 'localhost'
+  port: 3306
+  user: 'root'
+  password: 'Kolian18**'
+  name: 'choice'
+
+consumer:
+  brokers: ['192.168.178.17:9092']
+  topic: 'store.choice.choice'
+  group_id: 'consumer-choice-group'
+
+cache:
+  address: '192.168.178.17'
+  port: ':6379'
+  password: 'Awesome85**'
+  db: 0
+  pool_size: 25
+  minimum_idle_connections: 10
+  maximum_retries: 1
+
