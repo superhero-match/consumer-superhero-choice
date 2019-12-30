@@ -1,4 +1,4 @@
-package consumer
+package main
 
 import (
 	"github.com/consumer-superhero-choice/cmd/consumer/reader"
