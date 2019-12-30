@@ -71,7 +71,7 @@ func (r *Reader) Read() error {
 			return err
 		}
 
-		// If it si a like(1), then it should be saved to Cache.
+		// If it is a like(1), then it should be saved to Cache.
 		if c.Choice == int64(1) {
 			err = r.Cache.SetChoice(cache.Choice{
 				ID:                c.ID,
