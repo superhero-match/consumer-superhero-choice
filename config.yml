@@ -6,12 +6,12 @@ db:
   name: 'choice'
 
 consumer:
-  brokers: ['192.168.178.17:9092']
+  brokers: ['localhost:9092']
   topic: 'store.choice.choice'
   group_id: 'consumer-choice-group'
 
 cache:
-  address: '192.168.178.17'
+  address: 'localhost'
   port: ':6379'
   password: 'Awesome85**'
   db: 0
