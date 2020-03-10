@@ -14,10 +14,10 @@
 package reader
 
 import (
-	"github.com/consumer-superhero-choice/internal/cache"
-	"github.com/consumer-superhero-choice/internal/config"
-	"github.com/consumer-superhero-choice/internal/consumer"
-	"github.com/consumer-superhero-choice/internal/db"
+	"github.com/superhero-match/consumer-superhero-choice/internal/cache"
+	"github.com/superhero-match/consumer-superhero-choice/internal/config"
+	"github.com/superhero-match/consumer-superhero-choice/internal/consumer"
+	"github.com/superhero-match/consumer-superhero-choice/internal/db"
 )
 
 // Reader holds all the data relevant.

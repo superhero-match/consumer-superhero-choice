@@ -14,7 +14,7 @@
 package db
 
 import (
-	"github.com/consumer-superhero-choice/internal/db/model"
+	"github.com/superhero-match/consumer-superhero-choice/internal/db/model"
 )
 
 // StoreChoice saves newly registered Superhero.
