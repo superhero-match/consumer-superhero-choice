@@ -17,7 +17,7 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/consumer-superhero-choice/internal/cache/model"
+	"github.com/superhero-match/consumer-superhero-choice/internal/cache/model"
 )
 
 // SetChoice stores choice(like only, dislikes only go to DB) into Redis cache.

@@ -18,8 +18,8 @@ import (
 	"encoding/json"
 	"fmt"
 
-	cache "github.com/consumer-superhero-choice/internal/cache/model"
-	"github.com/consumer-superhero-choice/internal/consumer/model"
+	cache "github.com/superhero-match/consumer-superhero-choice/internal/cache/model"
+	"github.com/superhero-match/consumer-superhero-choice/internal/consumer/model"
 )
 
 // Read consumes the Kafka topic and stores the choice made by superhero

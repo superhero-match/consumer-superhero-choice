@@ -2,26 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1b82d3f8-30a7-4656-b9c8-3b6e59a05aef" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/ffc4fd5a-3d8c-4789-9fe9-b8a00f9470cf.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/ffc4fd5a-3d8c-4789-9fe9-b8a00f9470cf.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmd/consumer/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/cmd/consumer/main.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmd/consumer/model/choice.go" beforeDir="false" afterPath="$PROJECT_DIR$/cmd/consumer/model/choice.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmd/consumer/reader/read.go" beforeDir="false" afterPath="$PROJECT_DIR$/cmd/consumer/reader/read.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmd/consumer/reader/reader.go" beforeDir="false" afterPath="$PROJECT_DIR$/cmd/consumer/reader/reader.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config.yml" beforeDir="false" afterPath="$PROJECT_DIR$/config.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/internal/cache/cache.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/cache/cache.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/internal/cache/model/choice.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/cache/model/choice.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/internal/cache/set.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/cache/set.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/internal/config/cache.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/config/cache.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/internal/config/config.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/config/config.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/internal/config/consumer.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/config/consumer.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/internal/config/db.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/config/db.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/internal/consumer/consumer.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/consumer/consumer.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/internal/consumer/model/choice.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/consumer/model/choice.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/internal/db/db.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/db/db.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/internal/db/model/choice.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/db/model/choice.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/internal/db/store.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/db/store.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -94,10 +84,11 @@
   <component name="PropertiesComponent">
     <property name="DatabaseDriversLRU" value="mysql" />
     <property name="DefaultGoTemplateProperty" value="Go File" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="go.import.settings.migrated" value="true" />
-    <property name="last_opened_file_path" value="$USER_HOME$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -145,21 +136,21 @@
     </option>
   </component>
   <component name="WindowStateProjectService">
-    <state width="1323" height="261" key="GridCell.Tab.0.bottom" timestamp="1582549410643">
+    <state width="1323" height="261" key="GridCell.Tab.0.bottom" timestamp="1583314478775">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="261" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1582549410643" />
-    <state width="1323" height="261" key="GridCell.Tab.0.center" timestamp="1582549410642">
+    <state width="1323" height="261" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1583314478775" />
+    <state width="1323" height="261" key="GridCell.Tab.0.center" timestamp="1583314478774">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="261" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1582549410642" />
-    <state width="1323" height="261" key="GridCell.Tab.0.left" timestamp="1582549410641">
+    <state width="1323" height="261" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1583314478774" />
+    <state width="1323" height="261" key="GridCell.Tab.0.left" timestamp="1583314478774">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="261" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1582549410641" />
-    <state width="1323" height="261" key="GridCell.Tab.0.right" timestamp="1582549410642">
+    <state width="1323" height="261" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1583314478774" />
+    <state width="1323" height="261" key="GridCell.Tab.0.right" timestamp="1583314478775">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="261" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1582549410642" />
+    <state width="1323" height="261" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1583314478775" />
   </component>
 </project>

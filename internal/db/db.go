@@ -17,7 +17,7 @@ import (
 	"database/sql"
 	"fmt"
 
-	"github.com/consumer-superhero-choice/internal/config"
+	"github.com/superhero-match/consumer-superhero-choice/internal/config"
 
 	_ "github.com/go-sql-driver/mysql" // MySQL driver.
 )
