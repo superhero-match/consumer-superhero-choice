@@ -6,7 +6,7 @@ db:
   name: 'choice'
 
 consumer:
-  brokers: ['localhost:9092']
+  brokers: ['192.168.0.105:9092']
   topic: 'store.choice.choice'
   group_id: 'consumer-choice-group'
 
