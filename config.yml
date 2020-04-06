@@ -11,7 +11,7 @@ consumer:
   group_id: 'consumer-choice-group'
 
 cache:
-  address: 'localhost'
+  address: '192.168.0.105'
   port: ':6379'
   password: 'Awesome85**'
   db: 0
