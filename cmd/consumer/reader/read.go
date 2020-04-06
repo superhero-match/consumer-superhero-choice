@@ -17,9 +17,12 @@ import (
 	"context"
 	"encoding/json"
 	"fmt"
+	"go.uber.org/zap"
+	"time"
 
 	cache "github.com/superhero-match/consumer-superhero-choice/internal/cache/model"
 	"github.com/superhero-match/consumer-superhero-choice/internal/consumer/model"
+	dbm "github.com/superhero-match/consumer-superhero-choice/internal/db/model"
 )
 
 // Read consumes the Kafka topic and stores the choice made by superhero
@@ -32,8 +35,20 @@ func (r *Reader) Read() error {
 		m, err := r.Consumer.Consumer.FetchMessage(ctx)
 		fmt.Print("after FetchMessage")
 		if err != nil {
+			r.Logger.Error(
+				"failed to fetch message",
+				zap.String("err", err.Error()),
+				zap.String("time", time.Now().UTC().Format(r.TimeFormat)),
+			)
+
 			err = r.Consumer.Consumer.Close()
 			if err != nil {
+				r.Logger.Error(
+					"failed to close consumer",
+					zap.String("err", err.Error()),
+					zap.String("time", time.Now().UTC().Format(r.TimeFormat)),
+				)
+
 				return err
 			}
 
@@ -52,36 +67,47 @@ func (r *Reader) Read() error {
 		var c model.Choice
 
 		if err := json.Unmarshal(m.Value, &c); err != nil {
-			_ = r.Consumer.Consumer.Close()
+			r.Logger.Error(
+				"failed to unmarshal JSON to Choice consumer model",
+				zap.String("err", err.Error()),
+				zap.String("time", time.Now().UTC().Format(r.TimeFormat)),
+			)
+
+			err = r.Consumer.Consumer.Close()
 			if err != nil {
-				fmt.Println("Unmarshal")
-				fmt.Println(err)
-				err = r.Consumer.Consumer.Close()
-				if err != nil {
-					return err
-				}
+				return err
+			}
+
+			return err
+		}
+
+		err = r.DB.StoreChoice(dbm.Choice{
+			ID:                c.ID,
+			Choice:            c.Choice,
+			SuperheroID:       c.SuperheroID,
+			ChosenSuperheroID: c.ChosenSuperheroID,
+			CreatedAt:         c.CreatedAt,
+		}, )
+		if err != nil {
+			r.Logger.Error(
+				"failed to store choice to database",
+				zap.String("err", err.Error()),
+				zap.String("time", time.Now().UTC().Format(r.TimeFormat)),
+			)
+
+			err = r.Consumer.Consumer.Close()
+			if err != nil {
+				r.Logger.Error(
+					"failed to close consumer",
+					zap.String("err", err.Error()),
+					zap.String("time", time.Now().UTC().Format(r.TimeFormat)),
+				)
 
 				return err
 			}
-		}
 
-		//err = r.DB.StoreChoice(dbm.Choice{
-		//	ID:                c.ID,
-		//	Choice:            c.Choice,
-		//	SuperheroID:       c.SuperheroID,
-		//	ChosenSuperheroID: c.ChosenSuperheroID,
-		//	CreatedAt:         c.CreatedAt,
-		//}, )
-		//if err != nil {
-		//	fmt.Println("DB")
-		//	fmt.Println(err)
-		//	err = r.Consumer.Consumer.Close()
-		//	if err != nil {
-		//		return err
-		//	}
-		//
-		//	return err
-		//}
+			return err
+		}
 
 		// If it is a like(1), then it should be saved to Cache.
 		if c.Choice == int64(1) {
@@ -93,10 +119,20 @@ func (r *Reader) Read() error {
 				CreatedAt:         c.CreatedAt,
 			}, )
 			if err != nil {
-				fmt.Println("Cache")
-				fmt.Println(err)
+				r.Logger.Error(
+					"failed to store choice in cache",
+					zap.String("err", err.Error()),
+					zap.String("time", time.Now().UTC().Format(r.TimeFormat)),
+				)
+
 				err = r.Consumer.Consumer.Close()
 				if err != nil {
+					r.Logger.Error(
+						"failed to close consumer",
+						zap.String("err", err.Error()),
+						zap.String("time", time.Now().UTC().Format(r.TimeFormat)),
+					)
+
 					return err
 				}
 
@@ -106,8 +142,20 @@ func (r *Reader) Read() error {
 
 		err = r.Consumer.Consumer.CommitMessages(ctx, m)
 		if err != nil {
+			r.Logger.Error(
+				"failed to commit message",
+				zap.String("err", err.Error()),
+				zap.String("time", time.Now().UTC().Format(r.TimeFormat)),
+			)
+
 			err = r.Consumer.Consumer.Close()
 			if err != nil {
+				r.Logger.Error(
+					"failed to close consumer",
+					zap.String("err", err.Error()),
+					zap.String("time", time.Now().UTC().Format(r.TimeFormat)),
+				)
+
 				return err
 			}
 

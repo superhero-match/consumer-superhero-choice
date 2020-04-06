@@ -18,13 +18,18 @@ import (
 	"github.com/superhero-match/consumer-superhero-choice/internal/config"
 	"github.com/superhero-match/consumer-superhero-choice/internal/consumer"
 	"github.com/superhero-match/consumer-superhero-choice/internal/db"
+	"go.uber.org/zap"
 )
+
+const timeFormat = "2006-01-02T15:04:05"
 
 // Reader holds all the data relevant.
 type Reader struct {
-	DB       *db.DB
-	Cache    *cache.Cache
-	Consumer *consumer.Consumer
+	DB         *db.DB
+	Cache      *cache.Cache
+	Consumer   *consumer.Consumer
+	Logger     *zap.Logger
+	TimeFormat string
 }
 
 // NewReader configures Reader.
@@ -41,9 +46,18 @@ func NewReader(cfg *config.Config) (r *Reader, err error) {
 
 	cs := consumer.NewConsumer(cfg)
 
+	logger, err := zap.NewProduction()
+	if err != nil {
+		return nil, err
+	}
+
+	defer logger.Sync()
+
 	return &Reader{
-		DB:       dbs,
-		Cache:    ch,
-		Consumer: cs,
+		DB:         dbs,
+		Cache:      ch,
+		Consumer:   cs,
+		Logger:     logger,
+		TimeFormat: timeFormat,
 	}, nil
 }
