@@ -13,7 +13,7 @@ dkb:
 	docker build -t consumer-superhero-choice .
 
 dkr:
-	docker run consumer-superhero-choice
+	docker run -p "8050:8050" consumer-superhero-choice
 
 launch: dkb dkr
 

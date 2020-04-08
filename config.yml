@@ -1,8 +1,8 @@
 db:
-  host: 'localhost'
+  host: '192.168.0.101'
   port: 3306
-  user: 'root'
-  password: 'Kolian18**'
+  user: 'dev'
+  password: 'password'
   name: 'choice'
 
 consumer:
@@ -18,4 +18,10 @@ cache:
   pool_size: 25
   minimum_idle_connections: 10
   maximum_retries: 1
+
+health:
+  address: '192.168.0.101'
+  port: ':8050'
+  shutdown_endpoint: '/api/v1/consumer_superhero_choice_health/shutdown'
+  content_type: 'application/json'
 

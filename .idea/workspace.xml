@@ -4,14 +4,12 @@
     <list default="true" id="1b82d3f8-30a7-4656-b9c8-3b6e59a05aef" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/ffc4fd5a-3d8c-4789-9fe9-b8a00f9470cf.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/ffc4fd5a-3d8c-4789-9fe9-b8a00f9470cf.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/Makefile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmd/consumer/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/cmd/consumer/main.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmd/consumer/reader/read.go" beforeDir="false" afterPath="$PROJECT_DIR$/cmd/consumer/reader/read.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmd/consumer/reader/reader.go" beforeDir="false" afterPath="$PROJECT_DIR$/cmd/consumer/reader/reader.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config.yml" beforeDir="false" afterPath="$PROJECT_DIR$/config.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/go.sum" beforeDir="false" afterPath="$PROJECT_DIR$/go.sum" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/internal/config/cache.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/config/cache.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/internal/config/config.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/config/config.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/internal/config/db.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/config/db.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -103,7 +101,7 @@
       <recent name="C:\Users\ACER\go\src\github.com\consumer-superhero-choice\cmd\consumer" />
     </key>
   </component>
-  <component name="RunManager" selected="Go Build.go build github.com/superhero-match/consumer-superhero-choice/cmd/consumer">
+  <component name="RunManager" selected="Go Build.go build github.com/superhero-match/consumer-superhero-choice/cmd/health">
     <configuration name="go build github.com/consumer-superhero-choice/cmd/consumer" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
       <module name="consumer-superhero-choice" />
       <working_directory value="$PROJECT_DIR$/" />
@@ -122,8 +120,18 @@
       <directory value="$PROJECT_DIR$/" />
       <method v="2" />
     </configuration>
+    <configuration name="go build github.com/superhero-match/consumer-superhero-choice/cmd/health" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
+      <module name="consumer-superhero-choice" />
+      <working_directory value="$PROJECT_DIR$/" />
+      <kind value="PACKAGE" />
+      <filePath value="$PROJECT_DIR$/cmd/health/main.go" />
+      <package value="github.com/superhero-match/consumer-superhero-choice/cmd/health" />
+      <directory value="$PROJECT_DIR$/" />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Go Build.go build github.com/superhero-match/consumer-superhero-choice/cmd/health" />
         <item itemvalue="Go Build.go build github.com/superhero-match/consumer-superhero-choice/cmd/consumer" />
         <item itemvalue="Go Build.go build github.com/consumer-superhero-choice/cmd/consumer" />
       </list>
@@ -154,21 +162,21 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="463" y="119" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1583848301985" />
-    <state width="1323" height="261" key="GridCell.Tab.0.bottom" timestamp="1586154775720">
+    <state width="1323" height="261" key="GridCell.Tab.0.bottom" timestamp="1586169285734">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="261" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1586154775720" />
-    <state width="1323" height="261" key="GridCell.Tab.0.center" timestamp="1586154775719">
+    <state width="1323" height="261" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1586169285734" />
+    <state width="1323" height="261" key="GridCell.Tab.0.center" timestamp="1586169285733">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="261" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1586154775719" />
-    <state width="1323" height="261" key="GridCell.Tab.0.left" timestamp="1586154775719">
+    <state width="1323" height="261" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1586169285733" />
+    <state width="1323" height="261" key="GridCell.Tab.0.left" timestamp="1586169285733">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="261" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1586154775719" />
-    <state width="1323" height="261" key="GridCell.Tab.0.right" timestamp="1586154775720">
+    <state width="1323" height="261" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1586169285733" />
+    <state width="1323" height="261" key="GridCell.Tab.0.right" timestamp="1586169285734">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="261" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1586154775720" />
+    <state width="1323" height="261" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1586169285734" />
   </component>
 </project>
