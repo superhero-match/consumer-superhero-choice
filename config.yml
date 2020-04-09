@@ -20,7 +20,6 @@ cache:
   maximum_retries: 1
 
 health:
-  address: '192.168.0.101'
   port: ':8050'
   shutdown_endpoint: '/api/v1/consumer_superhero_choice_health/shutdown'
   content_type: 'application/json'
