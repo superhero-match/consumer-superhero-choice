@@ -25,6 +25,8 @@ import (
 	dbm "github.com/superhero-match/consumer-superhero-choice/internal/db/model"
 )
 
+const like = int64(1)
+
 // Read consumes the Kafka topic and stores the choice made by superhero
 // to DB and if it is a like to Cache as well.
 func (r *Reader) Read() error {
@@ -110,17 +112,41 @@ func (r *Reader) Read() error {
 		}
 
 		// If it is a like(1), then it should be saved to Cache.
-		if c.Choice == int64(1) {
-			err = r.Cache.SetChoice(cache.Choice{
+		if c.Choice == like {
+			ch := cache.Choice{
 				ID:                c.ID,
 				Choice:            c.Choice,
 				SuperheroID:       c.SuperheroID,
 				ChosenSuperheroID: c.ChosenSuperheroID,
 				CreatedAt:         c.CreatedAt,
-			}, )
+			}
+
+			err = r.Cache.SetChoice(ch)
 			if err != nil {
 				r.Logger.Error(
 					"failed to store choice in cache",
+					zap.String("err", err.Error()),
+					zap.String("time", time.Now().UTC().Format(r.TimeFormat)),
+				)
+
+				err = r.Consumer.Consumer.Close()
+				if err != nil {
+					r.Logger.Error(
+						"failed to close consumer",
+						zap.String("err", err.Error()),
+						zap.String("time", time.Now().UTC().Format(r.TimeFormat)),
+					)
+
+					return err
+				}
+
+				return err
+			}
+
+			err = r.Cache.SetLike(ch)
+			if err != nil {
+				r.Logger.Error(
+					"failed to store like in cache",
 					zap.String("err", err.Error()),
 					zap.String("time", time.Now().UTC().Format(r.TimeFormat)),
 				)
