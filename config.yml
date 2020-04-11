@@ -18,6 +18,8 @@ cache:
   pool_size: 25
   minimum_idle_connections: 10
   maximum_retries: 1
+  choice_key_format: 'choice.%s.%s'
+  likes_key_format: 'likes.for.%s'
 
 health:
   port: ':8050'
