@@ -22,4 +22,6 @@ type Cache struct {
 	PoolSize               int    `env:"REDIS_POOL_SIZE" default:"25"`
 	MinimumIdleConnections int    `env:"REDIS_MINIMUM_IDLE_CONNECTIONS" default:"10"`
 	MaximumRetries         int    `env:"REDIS_MAXIMUM_RETRIES" default:"1"`
+	ChoiceKeyFormat        string `env:"REDIS_CHOICE_KEY_FORMAT" default:"choice.%s.%s"`
+	LikesKeyFormat         string `env:"REDIS_LIKES_KEY_FORMAT" default:"likes.for.%s"`
 }
