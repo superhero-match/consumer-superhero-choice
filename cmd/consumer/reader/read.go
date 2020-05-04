@@ -112,6 +112,7 @@ func (r *Reader) Read() error {
 		}
 
 		// If it is a like(1), then it should be saved to Cache.
+		// Dislikes only go to the database.
 		if c.Choice == like {
 			ch := cache.Choice{
 				ID:                c.ID,
