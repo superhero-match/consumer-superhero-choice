@@ -5,12 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1b82d3f8-30a7-4656-b9c8-3b6e59a05aef" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/ffc4fd5a-3d8c-4789-9fe9-b8a00f9470cf.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/ffc4fd5a-3d8c-4789-9fe9-b8a00f9470cf.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmd/consumer/reader/read.go" beforeDir="false" afterPath="$PROJECT_DIR$/cmd/consumer/reader/read.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmd/consumer/reader/reader.go" beforeDir="false" afterPath="$PROJECT_DIR$/cmd/consumer/reader/reader.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config.yml" beforeDir="false" afterPath="$PROJECT_DIR$/config.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/internal/cache/cache.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/cache/cache.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/internal/cache/set_choice.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/cache/set_choice.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/internal/cache/set_like.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/cache/set_like.go" afterDir="false" />
