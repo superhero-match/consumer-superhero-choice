@@ -14,16 +14,15 @@
 package cache
 
 import (
-	"fmt"
 	"github.com/superhero-match/consumer-superhero-choice/internal/cache/model"
 )
 
-// SetChoice stores choice(like only, dislikes only go to DB) into Redis cache.
-func (c *Cache) SetLike(choice model.Choice) error {
+// SetLike stores like into Redis cache.
+func (c *cache) SetLike(key string, choice model.Choice) error {
 	members := make([]interface{}, 0)
 	members = append(members, choice.SuperheroID)
 
-	err := c.Redis.SAdd(fmt.Sprintf(c.LikesKeyFormat, choice.ChosenSuperheroID), members..., ).Err()
+	err := c.Redis.SAdd(key, members...).Err()
 	if err != nil {
 		return err
 	}
