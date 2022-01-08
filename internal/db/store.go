@@ -17,8 +17,8 @@ import (
 	"github.com/superhero-match/consumer-superhero-choice/internal/db/model"
 )
 
-// StoreChoice saves newly registered Superhero.
-func(db *DB) StoreChoice (c model.Choice) error {
+// StoreChoice saves choice made by user, like or dislike.
+func (db *db) StoreChoice(c model.Choice) error {
 	_, err := db.stmtInsertNewChoice.Exec(
 		c.ID,
 		c.Choice,
